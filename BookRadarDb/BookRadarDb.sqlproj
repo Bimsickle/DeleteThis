@@ -2,9 +2,6 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <Sdk Name="Microsoft.Build.Sql" Version="0.1.7-preview" />
   <PropertyGroup>
-    <SqlPublishProfilePath>BookRadarDb.publish.xml</SqlPublishProfilePath>
-  </PropertyGroup>
-  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <Name>BookRadarDb</Name>
