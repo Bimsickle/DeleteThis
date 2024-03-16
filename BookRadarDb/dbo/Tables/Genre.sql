@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Genre]
+(
+	[Id] UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+	[CreatedDate] datetime2(7) NOT NULL DEFAULT GETUTCDATE(),
+	[Genre] nvarchar(255) NOT NULL,
+	[IsDeleted] BIT NOT NULL DEFAULT 0 
+)

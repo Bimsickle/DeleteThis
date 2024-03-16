@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[UserBookCollection]
+(
+	[Id] UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+	[CreatedDate] [datetime2](7) NOT NULL DEFAULT GETUTCDATE(),
+	[UserAccountId] NVARCHAR(450) NOT NULL,
+	[BookId] UNIQUEIDENTIFIER NOT NULL,
+	[BookEdition] NVARCHAR(64) NOT NULL DEFAULT 'Standard',
+	[IsDeleted] BIT NOT NULL DEFAULT 0
+)

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.7-preview" />
+  <PropertyGroup>
+    <SqlPublishProfilePath>BookRadarDb.publish.xml</SqlPublishProfilePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>BookRadarDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a1c0bfb7-86e0-4f76-810d-110e47796eae}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>BookRadarDb</RootNamespace>
+    <AssemblyName>BookRadarDb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Book.sql" />
+    <Build Include="dbo\Tables\Genre.sql" />
+    <Build Include="dbo\Tables\BookGenre.sql" />
+    <Build Include="dbo\Tables\WatchList.sql" />
+    <Build Include="dbo\StoredProcedures\spBooks_CreateBook.sql" />
+    <Build Include="dbo\StoredProcedures\spBooks_DeleteBook.sql" />
+    <Build Include="dbo\StoredProcedures\spBooks_GetAllBooks.sql" />
+    <Build Include="dbo\StoredProcedures\spBooks_GetOneBook.sql" />
+    <Build Include="dbo\StoredProcedures\spBooks_UpdateBook.sql" />
+    <Build Include="dbo\StoredProcedures\spWatchList_Create.sql" />
+    <Build Include="dbo\StoredProcedures\spWatchList_Archive.sql" />
+    <Build Include="dbo\StoredProcedures\spWatchList_GetAccountIdByBook.sql" />
+    <Build Include="dbo\StoredProcedures\spWatchList_GetAllByAccount.sql" />
+    <Build Include="dbo\StoredProcedures\spBook_GenreGetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spGenre_GetOrCreateGenreByGenre.sql" />
+    <Build Include="dbo\StoredProcedures\spGenre_GetAllGenres.sql" />
+    <Build Include="dbo\StoredProcedures\spGenre_CreateBookGenre.sql" />
+    <Build Include="dbo\StoredProcedures\spGenre_DeleteBookGenre.sql" />
+    <Build Include="dbo\StoredProcedures\spBooks_GetFeatured.sql" />
+    <Build Include="dbo\Tables\Publisher.sql" />
+    <Build Include="dbo\Tables\UserBookCollection.sql" />
+    <Build Include="dbo\Tables\NewsArticle.sql" />
+    <Build Include="dbo\Tables\NewsArticleComment.sql" />
+    <Build Include="dbo\Tables\BookComment.sql" />
+    <Build Include="dbo\StoredProcedures\spNews_Create.sql" />
+    <Build Include="dbo\StoredProcedures\spNews_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spNewsArticle_EditPost.sql" />
+    <Build Include="dbo\StoredProcedures\spNews_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\spNews_GetAllAdmin.sql" />
+    <Build Include="dbo\StoredProcedures\spUserBookCollection_Create.sql" />
+    <Build Include="dbo\StoredProcedures\spUserBookCollection_Edit.sql" />
+    <Build Include="dbo\StoredProcedures\spUserBookCollection_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spUserBookCollection_GetAllByUserId.sql" />
+    <Build Include="dbo\StoredProcedures\spUserBookCollection_GetAllByBookId.sql" />
+    <Build Include="dbo\Tables\PublisherUser.sql" />
+    <Build Include="dbo\Tables\AccessLog.sql" />
+    <Build Include="dbo\StoredProcedures\spAccessLog_CreateLog.sql" />
+    <Build Include="dbo\StoredProcedures\spAccessLog_GetLogsByDate.sql" />
+    <Build Include="dbo\Tables\AccountValidation.sql" />
+    <Build Include="dbo\StoredProcedures\spUserAccount_Register.sql" />
+    <Build Include="dbo\StoredProcedures\spUserAccount_Verify.sql" />
+    <Build Include="dbo\StoredProcedures\spAccessLog_GetById.sql" />
+    <Build Include="dbo\StoredProcedures\spAccessLog_GetByAction.sql" />
+    <Build Include="dbo\StoredProcedures\spAccessLog_GetByUserId.sql" />
+    <Build Include="dbo\Tables\UserSession.sql" />
+    <Build Include="dbo\StoredProcedures\spUserAccount_CreateRefreshToken.sql" />
+    <Build Include="dbo\StoredProcedures\spUserAccount_RevokeToken.sql" />
+    <Build Include="dbo\StoredProcedures\spUserAccount_ValidateToken.sql" />
+    <Build Include="dbo\StoredProcedures\spPublisher_SelectAll.sql" />
+    <Build Include="dbo\StoredProcedures\spPublisher_CreateWithId.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BookRadarDb_1.publish.xml" />
+  </ItemGroup>
+</Project>
